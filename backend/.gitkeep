@@ -1,0 +1,88 @@
+# Azuga Installation Platform
+
+A scalable, enterprise-ready vehicle installation guide platform for GPS, SafetyCAM, ELD, and Asset Tracker devices.
+
+## 🎯 Features
+
+### Version 1.0
+- **Authentication**: Admin and Installer role-based access
+- **Vehicle Library**: Search by Make, Model, Year, VIN
+- **Device Support**: GPS, SafetyCAM, ELD, Asset Tracker
+- **Interactive 2D Guides**: Clickable hotspots, animated cable routing
+- **Progress Tracking**: Mark steps complete, auto-save, resume later
+- **Admin Portal**: Manage vehicles, steps, images, videos, hotspots
+- **Installer Dashboard**: Recent installations, favorites, search
+- **Reports**: Installation history, completion metrics
+- **Mobile First**: Fully responsive design
+
+### Future Features
+- 3D vehicle visualization (Three.js integration ready)
+- Advanced analytics
+- Real-time collaboration
+- Multi-language support
+- Cloud storage integration
+
+## 🏗️ Architecture
+
+```
+azuga-installation-platform/
+├── backend/                    # Node.js/Express API
+│   ├── src/
+│   │   ├── config/            # Configuration (db, auth)
+│   │   ├── controllers/        # Route handlers
+│   │   ├── models/            # Data models
+│   │   ├── routes/            # API routes
+│   │   ├── middleware/        # Auth, validation
+│   │   ├── services/          # Business logic
+│   │   ├── utils/             # Helpers
+│   │   └── index.ts           # Entry point
+│   ├── migrations/            # Database migrations
+│   ├── seeds/                 # Database seeds
+│   ├── .env.example
+│   ├── tsconfig.json
+│   └── package.json
+├── frontend/                   # React + TypeScript
+│   ├── src/
+│   │   ├── components/        # Reusable components
+│   │   ├── pages/             # Page components
+│   │   ├── features/          # Feature modules
+│   │   ├── hooks/             # Custom React hooks
+│   │   ├── services/          # API client
+│   │   ├── store/             # State management
+│   │   ├── styles/            # Tailwind config
+│   │   ├── types/             # TypeScript types
+│   │   ├── utils/             # Helper functions
+│   │   ├── App.tsx
+│   │   └── main.tsx
+│   ├── .env.example
+│   ├── tailwind.config.js
+│   ├── vite.config.ts
+│   └── package.json
+├── docker-compose.yml         # Local dev environment
+├── .gitignore
+└── DEVELOPMENT.md             # Setup guide
+```
+
+## 🚀 Quick Start
+
+See [DEVELOPMENT.md](./DEVELOPMENT.md) for detailed setup instructions.
+
+## 🔄 API Architecture
+
+The API is designed to support future 3D integration:
+- All vehicle data includes geometry-ready metadata
+- Installation steps reference 2D/3D coordinates
+- Hotspots and cable routes use parametric definitions
+- Easy to add Three.js viewer without data model changes
+
+## 📦 Technology Stack
+
+- **Frontend**: React 18, TypeScript, Tailwind CSS, Vite
+- **Backend**: Node.js, Express, TypeScript
+- **Database**: PostgreSQL
+- **Storage**: Local (S3-ready architecture)
+- **Auth**: JWT + Role-based access control
+
+## 📄 License
+
+Proprietary - Azuga Inc.
